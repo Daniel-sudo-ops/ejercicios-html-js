@@ -3,9 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <title>Ejercicio 6</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <h1>Ejercicio 6</h1>
+  <pre id="resultado"></pre>
   <script>
     const lista = [
       { titulo: "Matrix", tipo: "película", id: 0 },
@@ -14,9 +16,15 @@
     ];
 
     function buscarElemento(valor){
+      const res = document.getElementById("resultado");
       const item = lista.find(el => el.id === valor || el.titulo.toLowerCase() === valor.toLowerCase());
-      if(item) console.log(item);
-      else console.log("No encontrado");
+      if(item){
+        console.log(item);
+        res.textContent += JSON.stringify(item, null, 2) + "\n";
+      } else {
+        console.log("No encontrado");
+        res.textContent += "No encontrado\n";
+      }
     }
 
     buscarElemento(1);

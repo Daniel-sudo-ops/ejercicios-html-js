@@ -3,9 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <title>Ejercicio 7</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <h1>Ejercicio 7</h1>
+  <pre id="resultado"></pre>
   <script>
     let lista = [
       { titulo: "Matrix", tipo: "película" },
@@ -13,11 +15,14 @@
     ];
 
     function agregarElemento(nuevo){
+      const res = document.getElementById("resultado");
       const existe = lista.some(el => el.titulo.toLowerCase() === nuevo.titulo.toLowerCase());
       if(existe){
         alert("La película ya existe!");
+        res.textContent += "La película ya existe!\n";
       } else {
         lista.unshift(nuevo);
+        res.textContent += JSON.stringify(lista, null, 2) + "\n";
       }
       console.log(lista);
     }

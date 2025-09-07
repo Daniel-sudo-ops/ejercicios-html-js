@@ -3,9 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <title>Ejercicio 1</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <h1>Ejercicio 1</h1>
+  <div id="resultado"></div>
   <script>
     const lista = [
       { titulo: "Matrix", tipo: "película" },
@@ -15,10 +17,14 @@
 
     function mostrarTipo(titulo) {
       const item = lista.find(el => el.titulo.toLowerCase() === titulo.toLowerCase());
+      const res = document.getElementById("resultado");
       if(item){
-        console.log(`La ${item.titulo} es una ${item.tipo}`);
+        const texto = `La ${item.titulo} es una ${item.tipo}`;
+        console.log(texto);
+        res.textContent = texto;
       } else {
         console.log("No encontrado");
+        res.textContent = "No encontrado";
       }
     }
 

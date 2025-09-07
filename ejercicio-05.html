@@ -3,9 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <title>Ejercicio 5</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <h1>Ejercicio 5</h1>
+  <pre id="resultado"></pre>
   <script>
     const peliculas = [
       { titulo: "Matrix", tipo: "película" },
@@ -16,6 +18,7 @@
     const conId = peliculas.map((item, index) => ({ ...item, id: index }));
 
     console.log(conId);
+    document.getElementById("resultado").textContent = JSON.stringify(conId, null, 2);
   </script>
 </body>
 </html>

@@ -3,9 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <title>Ejercicio 2</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <h1>Ejercicio 2</h1>
+  <ul id="resultado"></ul>
   <script>
     const lista = [
       { titulo: "Matrix", tipo: "película" },
@@ -14,7 +16,13 @@
     ];
 
     function mostrarPorTipo(tipo) {
-      lista.filter(el => el.tipo === tipo).forEach(el => console.log(el.titulo));
+      const res = document.getElementById("resultado");
+      lista.filter(el => el.tipo === tipo).forEach(el => {
+        console.log(el.titulo);
+        const li = document.createElement("li");
+        li.textContent = el.titulo;
+        res.appendChild(li);
+      });
     }
 
     mostrarPorTipo("serie");

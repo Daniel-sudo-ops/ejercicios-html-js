@@ -3,9 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <title>Ejercicio 3 - FizzBuzz</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <h1>Ejercicio 3</h1>
+  <div id="resultado"></div>
   <script>
     function fizzBuzz(num){
       if(num % 15 === 0) return "fizzbuzz";
@@ -14,10 +16,9 @@
       return num;
     }
 
-    console.log(fizzBuzz(6));
-    console.log(fizzBuzz(20));
-    console.log(fizzBuzz(30));
-    console.log(fizzBuzz(8));
+    const resultados = [fizzBuzz(6), fizzBuzz(20), fizzBuzz(30), fizzBuzz(8)];
+    console.log(resultados);
+    document.getElementById("resultado").textContent = resultados.join(", ");
   </script>
 </body>
 </html>
