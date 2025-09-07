@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 10 - Calculadora</title>
+  <style>
+    body { font-family: Arial; display: flex; justify-content: center; margin-top: 50px; }
+    .calc { border: 2px solid #000; padding: 20px; border-radius: 8px; }
+    input { width: 100%; margin-bottom: 10px; height: 40px; text-align: right; font-size: 20px; }
+    .btns { display: grid; grid-template-columns: repeat(4, 60px); gap: 5px; }
+    button { height: 40px; font-size: 18px; }
+  </style>
+</head>
+<body>
+  <div class="calc">
+    <input type="text" id="pantalla" readonly>
+    <div class="btns">
+      <button onclick="agregar('7')">7</button>
+      <button onclick="agregar('8')">8</button>
+      <button onclick="agregar('9')">9</button>
+      <button onclick="agregar('/')">/</button>
+      <button onclick="agregar('4')">4</button>
+      <button onclick="agregar('5')">5</button>
+      <button onclick="agregar('6')">6</button>
+      <button onclick="agregar('*')">*</button>
+      <button onclick="agregar('1')">1</button>
+      <button onclick="agregar('2')">2</button>
+      <button onclick="agregar('3')">3</button>
+      <button onclick="agregar('-')">-</button>
+      <button onclick="agregar('0')">0</button>
+      <button onclick="agregar('.')">.</button>
+      <button onclick="calcular()">=</button>
+      <button onclick="agregar('+')">+</button>
+      <button onclick="borrar()">C</button>
+    </div>
+  </div>
+
+  <script>
+    const pantalla = document.getElementById("pantalla");
+
+    function agregar(valor){
+      pantalla.value += valor;
+    }
+
+    function calcular(){
+      try {
+        pantalla.value = eval(pantalla.value);
+      } catch {
+        pantalla.value = "Error";
+      }
+    }
+
+    function borrar(){
+      pantalla.value = "";
+    }
+  </script>
+</body>
+</html>

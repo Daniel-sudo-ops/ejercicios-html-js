@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 3 - FizzBuzz</title>
+</head>
+<body>
+  <h1>Ejercicio 3</h1>
+  <script>
+    function fizzBuzz(num){
+      if(num % 15 === 0) return "fizzbuzz";
+      if(num % 3 === 0) return "fizz";
+      if(num % 5 === 0) return "buzz";
+      return num;
+    }
+
+    console.log(fizzBuzz(6));
+    console.log(fizzBuzz(20));
+    console.log(fizzBuzz(30));
+    console.log(fizzBuzz(8));
+  </script>
+</body>
+</html>

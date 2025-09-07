@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 1</title>
+</head>
+<body>
+  <h1>Ejercicio 1</h1>
+  <script>
+    const lista = [
+      { titulo: "Matrix", tipo: "película" },
+      { titulo: "Breaking Bad", tipo: "serie" },
+      { titulo: "Nuestro Planeta", tipo: "documental" }
+    ];
+
+    function mostrarTipo(titulo) {
+      const item = lista.find(el => el.titulo.toLowerCase() === titulo.toLowerCase());
+      if(item){
+        console.log(`La ${item.titulo} es una ${item.tipo}`);
+      } else {
+        console.log("No encontrado");
+      }
+    }
+
+    mostrarTipo("Matrix");
+  </script>
+</body>
+</html>

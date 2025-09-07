@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 9 - Pokedex</title>
+  <style>
+    body { font-family: Arial; }
+    #lista { display: flex; flex-wrap: wrap; gap: 10px; }
+    .pokemon { cursor: pointer; text-align: center; width: 80px; }
+    #detalle { margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <h1>Pokedex</h1>
+  <div id="lista"></div>
+  <div id="detalle"></div>
+
+  <script>
+    const lista = document.getElementById("lista");
+    const detalle = document.getElementById("detalle");
+
+    async function cargarPokemons(){
+      for(let i=1; i<=150; i++){
+        const div = document.createElement("div");
+        div.className = "pokemon";
+        div.innerHTML = `<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${i}.png"><br>#${i}`;
+        div.onclick = () => mostrarDetalle(i);
+        lista.appendChild(div);
+      }
+    }
+
+    async function mostrarDetalle(id){
+      const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
+      const data = await res.json();
+      detalle.innerHTML = `<h2>${data.name}</h2>
+        <img src="${data.sprites.front_default}">
+        <p>Peso: ${data.weight}</p>
+        <p>Altura: ${data.height}</p>`;
+    }
+
+    cargarPokemons();
+  </script>
+</body>
+</html>

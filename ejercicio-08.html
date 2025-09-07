@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 8</title>
+</head>
+<body>
+  <h1>Ejercicio 8 - PokeAPI</h1>
+  <script>
+    async function getPokemon(nombre){
+      try {
+        const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${nombre}`);
+        const data = await res.json();
+        console.log(data);
+      } catch (e){
+        console.error("Error:", e);
+      }
+    }
+
+    getPokemon("pikachu");
+  </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 6</title>
+</head>
+<body>
+  <h1>Ejercicio 6</h1>
+  <script>
+    const lista = [
+      { titulo: "Matrix", tipo: "película", id: 0 },
+      { titulo: "Breaking Bad", tipo: "serie", id: 1 },
+      { titulo: "Nuestro Planeta", tipo: "documental", id: 2 }
+    ];
+
+    function buscarElemento(valor){
+      const item = lista.find(el => el.id === valor || el.titulo.toLowerCase() === valor.toLowerCase());
+      if(item) console.log(item);
+      else console.log("No encontrado");
+    }
+
+    buscarElemento(1);
+    buscarElemento("Matrix");
+  </script>
+</body>
+</html>

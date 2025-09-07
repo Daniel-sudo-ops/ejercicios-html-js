@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 2</title>
+</head>
+<body>
+  <h1>Ejercicio 2</h1>
+  <script>
+    const lista = [
+      { titulo: "Matrix", tipo: "película" },
+      { titulo: "Breaking Bad", tipo: "serie" },
+      { titulo: "Nuestro Planeta", tipo: "documental" }
+    ];
+
+    function mostrarPorTipo(tipo) {
+      lista.filter(el => el.tipo === tipo).forEach(el => console.log(el.titulo));
+    }
+
+    mostrarPorTipo("serie");
+  </script>
+</body>
+</html>

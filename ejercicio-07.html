@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 7</title>
+</head>
+<body>
+  <h1>Ejercicio 7</h1>
+  <script>
+    let lista = [
+      { titulo: "Matrix", tipo: "película" },
+      { titulo: "Breaking Bad", tipo: "serie" }
+    ];
+
+    function agregarElemento(nuevo){
+      const existe = lista.some(el => el.titulo.toLowerCase() === nuevo.titulo.toLowerCase());
+      if(existe){
+        alert("La película ya existe!");
+      } else {
+        lista.unshift(nuevo);
+      }
+      console.log(lista);
+    }
+
+    agregarElemento({ titulo: "Matrix", tipo: "película" });
+    agregarElemento({ titulo: "Inception", tipo: "película" });
+  </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 5</title>
+</head>
+<body>
+  <h1>Ejercicio 5</h1>
+  <script>
+    const peliculas = [
+      { titulo: "Matrix", tipo: "película" },
+      { titulo: "Breaking Bad", tipo: "serie" },
+      { titulo: "Nuestro Planeta", tipo: "documental" }
+    ];
+
+    const conId = peliculas.map((item, index) => ({ ...item, id: index }));
+
+    console.log(conId);
+  </script>
+</body>
+</html>
